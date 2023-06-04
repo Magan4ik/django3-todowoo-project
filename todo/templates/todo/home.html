@@ -1,0 +1,25 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+
+<div class="position-absolute top-50 start-50 translate-middle">
+  <div class="text-center row justify-content-center">
+    <h1 class="text-info">Welcome to notes Todo</h1>
+    <p class="fs-5 col-9">
+      Here you can create your notes, plan important things or upcoming events.
+      You can also view already completed tasks and delete them if necessary.
+    </p>
+
+  </div>
+  <div class="row justify-content-center">
+    {% if not user.is_authenticated %}
+    <a href="{% url 'loginuser' %}" name="button" class="btn btn-primary col-1">Login</a>
+    {% else %}
+    <a href="{% url 'currenttodos' %}" name="button" class="btn btn-primary col-2">My todos</a>
+    {% endif %}
+  </div>
+
+</div>
+
+
+{% endblock %}

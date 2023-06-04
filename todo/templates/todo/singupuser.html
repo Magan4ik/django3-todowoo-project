@@ -1,0 +1,28 @@
+
+{% extends 'todo/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-5">
+    <h1 class="mb-3">Sing Up</h1>
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-group mb-3">
+          <label for="username">Username</label>
+          <input type="username" name="username" class="form-control" id="title" required>
+      </div>
+      <div class="form-group mb-3">
+          <label for="password1">Password</label>
+          <input type="password" name="password1" class="form-control" id="password1"></input>
+      </div>
+      <div class="form-group mb-3">
+          <label for="password2">Password confirmation</label>
+          <input type="password" name="password2" class="form-control" id="password2"></input>
+      </div>
+      <button type="submit" class="btn btn-primary">Sing Up</button>
+      <a href="{% url 'loginuser' %}" class="link-underline link-underline-opacity-0">I already have account</a>
+    </form>
+  </div>
+
+</div>
+{% endblock %}
